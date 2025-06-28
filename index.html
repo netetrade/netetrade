@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netetrade.com Tanıtımı</title>
+    <title>Netetrade.com Afiş Tasarımı</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://d3js.org/topojson.v3.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -39,11 +37,6 @@
             --input-border: #d1d5db;
             --input-text: #111827;
             --gemini-output-bg: #ffffff;
-            --lead-bg: #ffffff;
-            --map-bg: #f9fafb;
-            --map-land: #e5e7eb;
-            --map-border: #ffffff;
-            --map-highlight: #ef4444;
             --notification-bg: rgba(255, 255, 255, 0.9);
             --ticker-bg: #ffffff;
         }
@@ -71,11 +64,6 @@
             --input-border: #4b5563;
             --input-text: #ffffff;
             --gemini-output-bg: rgba(17, 24, 39, 0.8);
-            --lead-bg: #111827;
-            --map-bg: #111827;
-            --map-land: #374151;
-            --map-border: #111827;
-            --map-highlight: #f87171;
             --notification-bg: rgba(23, 31, 44, 0.9);
             --ticker-bg: #111827;
         }
@@ -93,13 +81,6 @@
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         
-        .lead-card { opacity: 0; transform: translateY(20px); animation: fadeIn 0.5s ease-out forwards; }
-        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-
-        .country { transition: fill 0.5s ease; }
-        .country-highlight { animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
-
         /* Bildirim Stilleri */
         .notification-popup {
             transition: all 0.5s ease-in-out;
@@ -113,7 +94,7 @@
 
         /* Logo Bandı Stilleri */
         .ticker-wrap { overflow: hidden; }
-        .ticker { display: inline-block; white-space: nowrap; animation: scroll 120s linear infinite; }
+        .ticker { display: inline-block; white-space: nowrap; animation: scroll 150s linear infinite; }
         .ticker-item { display: inline-block; padding: 0 1rem; }
         .ticker-item img { max-height: 40px; filter: grayscale(100%); transition: filter 0.3s; }
         .ticker-item:hover img { filter: grayscale(0%); }
@@ -167,28 +148,6 @@
                     Netetrade.com, uluslararası bir endüstriyel ticaret ve iş ağı platformudur. Küresel pazarda etkili olmak isteyen üretici ve ihracatçı firmalar için <span class="font-bold" style="color: var(--text-accent);">dijital dönüşüm çözümleri</span> sunar.
                 </p>
             </section>
-
-            <section id="ai-section" class="mb-10 p-8 rounded-2xl transition-colors duration-500" style="background-color: var(--ai-bg);">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-2" style="color: var(--ai-text-primary);" data-lang="aiTitle">🎯 Potansiyel Müşterilerinizi Keşfedin</h2>
-                <p class="text-center text-sm mb-6" style="color: var(--text-secondary);" data-lang="aiSubtitle">Yapay zekanın sizin için potansiyel pazarları ve müşteri taleplerini nasıl bulduğunu deneyimleyin.</p>
-                
-                <div class="mt-4 max-w-lg mx-auto">
-                    <p class="text-center text-sm font-semibold mb-2" style="color: var(--ai-text-primary);" data-lang="aiPromptTitle">Netetrade sizi Dünya'ya nasıl lanse eder?</p>
-                    <input id="product-input" type="text" class="w-full px-4 py-2 rounded-md shadow-inner transition" style="background-color: var(--input-bg); border: 1px solid var(--input-border); color: var(--input-text);" data-lang-placeholder="placeholder">
-                    <button id="generate-button" class="w-full mt-3 px-4 py-2 font-bold text-white rounded-md shadow-md transition-transform transform hover:scale-105" style="background-color: var(--text-accent);">
-                        <span data-lang="generateButton">Fırsatları Analiz Et</span>
-                    </button>
-                </div>
-
-                <div id="results-container" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center min-h-[300px]">
-                    <div id="map-container" class="w-full h-full rounded-lg" style="background-color: var(--map-bg);">
-                         <svg id="world-map" width="100%" height="100%" viewBox="0 0 960 500"></svg>
-                    </div>
-                    <div id="gemini-output" class="p-2 space-y-3">
-                        <!-- Yükleniyor animasyonu ve mesajı buraya gelecek -->
-                    </div>
-                </div>
-            </section>
             
             <section class="mb-10">
                 <h2 class="text-2xl md:text-3xl font-bold text-center mb-8" style="color: var(--text-primary);" data-lang="featuresTitle">Platform <span style="color: var(--text-accent);">Özellikleri</span></h2>
@@ -211,6 +170,21 @@
                             <h3 class="font-semibold text-lg" style="color: var(--text-primary);" data-lang="quotes">Teklif Alma/Verme</h3>
                         </div>
                     </div>
+                </div>
+            </section>
+            
+            <section id="ai-section" class="mb-10 p-8 rounded-2xl transition-colors duration-500" style="background-color: var(--ai-bg);">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-6" style="color: var(--ai-text-primary);" data-lang="aiTitle">🎯 Netetrade sizi Dünya'ya nasıl lanse eder?</h2>
+                
+                <div class="mt-4 max-w-lg mx-auto">
+                    <input id="product-input" type="text" class="w-full px-4 py-2 rounded-md shadow-inner transition" style="background-color: var(--input-bg); border: 1px solid var(--input-border); color: var(--input-text);" data-lang-placeholder="placeholder">
+                    <button id="generate-button" class="w-full mt-3 px-4 py-2 font-bold text-white rounded-md shadow-md transition-transform transform hover:scale-105" style="background-color: var(--text-accent);">
+                        <span data-lang="generateButton">Büyüme Potansiyelimi Gör</span>
+                    </button>
+                </div>
+
+                <div id="gemini-output" class="mt-4 p-4 rounded-md min-h-[150px]" style="background-color: var(--gemini-output-bg);">
+                     <!-- Yükleniyor animasyonu ve mesajı buraya gelecek -->
                 </div>
             </section>
             
@@ -263,11 +237,10 @@
                 qrCard: "QR ile Kartvizit",
                 catalogs: "Katalog & Sunumlar",
                 quotes: "Teklif Alma/Verme",
-                aiTitle: "🎯 Potansiyel Müşterilerinizi Keşfedin",
-                aiSubtitle: "Yapay zekanın sizin için potansiyel pazarları ve müşteri taleplerini nasıl bulduğunu deneyimleyin.",
-                aiPromptTitle: "Netetrade sizi Dünya'ya nasıl lanse eder?",
+                aiTitle: "🎯 Netetrade sizi Dünya'ya nasıl lanse eder?",
+                aiSubtitle: "",
                 placeholder: "Şirketinizin adını yazın...",
-                generateButton: "Fırsatları Analiz Et",
+                generateButton: "Büyüme Potansiyelimi Gör",
                 campaignTitle: "Türk Üreticilere Özel Kampanya",
                 campaignGift: "50\" 4K QLED Google TV",
                 gift: "HEDİYE!",
@@ -278,11 +251,11 @@
                 why3: "Dijitalleşme & Global Erişim",
                 footerText: "Siz de bu güçlü ağa katılarak sınırları aşın ve işinizi global seviyeye taşıyın!",
                 ctaButton: "Hemen Başvurun",
-                scanningText: "Potansiyel pazarlar ve alıcılar taranıyor...",
+                scanningText: "Size özel strateji oluşturuluyor...",
                 notifications: [
                     "Brezilya'dan bir alıcı, makine parçaları için teklif istedi.", "Almanya'daki bir firma, tekstil ürünleri için yeni bir talep oluşturdu.", "Hindistan'dan bir şirket, mermer üreticileriyle iletişime geçti.", "Katar'dan bir inşaat firması, yapı malzemeleri için teklif topluyor.", "Polonya'dan bir distribütör, gıda ürünleri için bir üreticiyle anlaştı.", "Birleşik Arap Emirlikleri'nden bir ithalatçı, mobilya için fiyat teklifi istedi.", "Rusya'dan bir alıcı, kimyasal hammadde için talep girdi.", "İtalya'dan bir moda markası, kumaş tedariki için firmaları araştırıyor.", "Nijerya'dan bir teknoloji firması, elektronik bileşenler için talep oluşturdu.", "Meksika'dan bir otomotiv şirketi, yedek parça için teklif bekliyor.", "Vietnam'dan bir tarım şirketi, gübre ithalatı için fiyat araştırıyor.", "Kanada'dan bir firma, ambalaj çözümleri için yeni bir talep yayınladı.", "Güney Kore'den bir teknoloji devi, yarı iletkenler için tedarikçi arıyor.", "Fransa'dan bir kozmetik firması, doğal esanslar için teklif istedi.", "Avustralya'dan bir şirket, yenilenebilir enerji ekipmanları için talep oluşturdu.", "Japonya'dan bir ithalatçı, zeytinyağı için yeni bir tedarikçi arıyor.", "İspanya'dan bir otel zinciri, otel tekstili için toplu alım talebi oluşturdu.", "Hollanda'dan bir firma, organik meyve ve sebze için teklif bekliyor.", "İngiltere'den bir perakendeci, ev dekorasyon ürünleri için talep girdi.", "Çin'den bir teknoloji şirketi, özel yazılım geliştirme hizmeti arıyor."
                 ],
-                geminiPrompt: (product) => `Bir B2B e-ticaret platformu olan Netetrade.com için, '${product}' adlı şirkete özel, 3 adet simüle edilmiş uluslararası müşteri talebi (lead) oluştur. Her talep farklı bir ülkeden gelmeli ve gerçekçi bir şirket adı içermelidir. Talepler, o ülkenin ithalat potansiyeline uygun, spesifik ürün miktarları veya işbirliği teklifleri içermelidir. Mesajlar Türkçe olmalıdır. Cevabı, ayrıştırılabilir bir JSON formatında, şu yapıda ver: {"leads": [{"country": "Ülke Adı (İngilizce)", "country_code": "iki harfli ülke kodu", "company": "Alıcı Şirket Adı", "message": "Talep mesajı (Türkçe)"}, ...]}`
+                geminiPrompt: (product) => `Şirket adı: '${product}'. Bu şirket için, okuyanın "hemen üye olmalıyım" diyeceği, son derece ikna edici ve karşı konulmaz bir "Netetrade ile Küresel Büyüme Projeksiyonu" oluştur. Netetrade.com'u, şirketin ihracat potansiyelini ortaya çıkaran ve küresel ticaretteki tüm engelleri ortadan kaldıran elit bir platform olarak öv. Cevabı Markdown formatında, şu güçlü başlıkları kullanarak ver: '### 🌍 Anında Yeni Müşteriler: Sınırları Kaldırın', '### 🚀 Marka Gücü: Küresel Sahnede Yükseliş', ve '### ⚙️ Akıllı Operasyon: Maliyetleri Düşürün, Kârı Artırın'. Her başlığın altına, şirkete özel, doğrudan faydaya odaklanan 2-3 adet kısa ve vurucu madde yaz. Çıktı, doğrudan şirkete hitap eden güçlü bir selamlama ile başlamalıdır (Örn: '**Sayın ${product} Yetkilileri, ihracat potansiyelinizi serbest bırakmaya hazır mısınız?**'). Metin Türkçe olmalıdır.`,
             },
             en: {
                 slogan: "GLOBAL TRADE CENTER",
@@ -292,11 +265,10 @@
                 qrCard: "QR Code Business Card",
                 catalogs: "Catalogs & Presentations",
                 quotes: "Request/Submit Quotes",
-                aiTitle: "🎯 Discover Your Potential Customers",
-                aiSubtitle: "Experience how AI finds potential markets and customer leads for you.",
-                aiPromptTitle: "How does Netetrade launch you to the World?",
+                aiTitle: "🎯 How Netetrade Launches You to the World",
+                aiSubtitle: "",
                 placeholder: "Enter your company's name...",
-                generateButton: "Analyze Opportunities",
+                generateButton: "See My Growth Potential",
                 campaignTitle: "Special Offer for Turkish Manufacturers",
                 campaignGift: "50\" 4K QLED Google TV",
                 gift: "GIFT!",
@@ -307,11 +279,11 @@
                 why3: "Digitalization & Global Reach",
                 footerText: "Join this powerful network to transcend borders and take your business to a global level!",
                 ctaButton: "Apply Now",
-                scanningText: "Scanning for potential markets and buyers...",
+                scanningText: "Creating your custom strategy...",
                 notifications: [
                     "A buyer from Brazil just requested a quote for machine parts.", "A company in Germany created a new request for textile products.", "A company from India has contacted marble producers.", "A construction firm from Qatar is collecting bids for building materials.", "A distributor from Poland has partnered with a food producer.", "An importer from the UAE has requested a price quote for furniture.", "A buyer from Russia has submitted a request for chemical raw materials.", "An Italian fashion brand is looking for fabric suppliers.", "A technology firm from Nigeria has created a request for electronic components.", "An automotive company from Mexico is waiting for quotes on spare parts.", "A Vietnamese agricultural company is looking for fertilizer import prices.", "A Canadian firm has published a new request for packaging solutions.", "A tech giant from South Korea is searching for semiconductor suppliers.", "A French cosmetics company has requested a quote for natural essences.", "An Australian company has created a request for renewable energy equipment.", "An importer from Japan is looking for a new olive oil supplier.", "A hotel chain from Spain has created a bulk purchase request for hotel textiles.", "A company from the Netherlands is waiting for offers for organic fruits and vegetables.", "A retailer from the UK has submitted a request for home decor products.", "A tech company from China is looking for custom software development services."
                 ],
-                geminiPrompt: (product) => `For Netetrade.com, a B2B e-commerce platform, generate 3 simulated international customer requests (leads) for a company named '${product}'. Each request must come from a different country and include a realistic company name. The requests should contain specific product quantities or collaboration proposals suitable for that country's import potential. The messages must be in English. Provide the answer in a parsable JSON format with this structure: {"leads": [{"country": "Country Name (English)", "country_code": "two-letter country code", "company": "Buyer Company Name", "message": "Request message (English)"}, ...]}`,
+                geminiPrompt: (product) => `Company name: '${product}'. Create an extremely persuasive and irresistible "Global Growth Projection with Netetrade" for this company, making the reader think "I must sign up immediately". Praise Netetrade.com as an elite platform that unlocks the company's export potential and removes all barriers to global trade. Provide the answer in Markdown format, using these powerful headings: '### 🌍 Instant New Customers: Remove the Borders', '### 🚀 Brand Power: Rise on the Global Stage', and '### ⚙️ Smart Operations: Cut Costs, Increase Profit'. Under each heading, write 2-3 short, impactful bullet points with specific benefits for the company. The output should start with a powerful, direct address to the company (e.g., '**Dear ${product} Team, are you ready to unleash your export potential?**'). The text must be in English.`,
             },
             de: {
                 slogan: "GLOBAL TRADE CENTER",
@@ -321,11 +293,10 @@
                 qrCard: "QR-Code Visitenkarte",
                 catalogs: "Kataloge & Präsentationen",
                 quotes: "Angebote anfordern/abgeben",
-                aiTitle: "🎯 Entdecken Sie Ihre potenziellen Kunden",
-                aiSubtitle: "Sehen Sie live, wie KI neue Märkte für Sie findet.",
-                aiPromptTitle: "Wie bringt Netetrade Sie auf den Weltmarkt?",
+                aiTitle: "🎯 Wie Netetrade Sie auf den Weltmarkt bringt",
+                aiSubtitle: "",
                 placeholder: "Geben Sie Ihren Firmennamen ein...",
-                generateButton: "Chancen analysieren",
+                generateButton: "Mein Wachstumspotenzial sehen",
                 campaignTitle: "Sonderangebot für türkische Hersteller",
                 campaignGift: "50\" 4K QLED Google TV",
                 gift: "GESCHENK!",
@@ -336,11 +307,11 @@
                 why3: "Digitalisierung & Globale Reichweite",
                 footerText: "Werden Sie Teil dieses starken Netzwerks, um Grenzen zu überwinden und Ihr Geschäft auf ein globales Niveau zu heben!",
                 ctaButton: "Jetzt bewerben",
-                scanningText: "Suche nach potenziellen Märkten und Käufern...",
+                scanningText: "Ihre individuelle Strategie wird erstellt...",
                 notifications: [
                     "Ein Käufer aus Brasilien hat ein Angebot für Maschinenteile angefordert.", "Ein Unternehmen in Deutschland hat eine neue Anfrage für Textilprodukte erstellt.", "Ein Unternehmen aus Indien hat Marmorproduzenten kontaktiert.", "Eine Baufirma aus Katar sammelt Angebote für Baumaterialien."
                 ],
-                geminiPrompt: (product) => `Für Netetrade.com, eine B2B-E-Commerce-Plattform, generieren Sie 3 simulierte internationale Kundenanfragen (Leads) für ein Unternehmen namens '${product}'. Jede Anfrage muss aus einem anderen Land stammen und einen realistischen Firmennamen enthalten. Die Anfragen sollten spezifische Produktmengen oder Kooperationsvorschläge enthalten, die für das Importpotenzial des jeweiligen Landes geeignet sind. Die Nachrichten müssen auf Deutsch sein. Geben Sie die Antwort in einem analysierbaren JSON-Format mit dieser Struktur an: {"leads": [{"country": "Country Name (English)", "country_code": "zweibuchstabiger Ländercode", "company": "Name des Käuferunternehmens", "message": "Anfragenachricht (Deutsch)"}, ...]}`,
+                geminiPrompt: (product) => `Firmenname: '${product}'. Erstellen Sie eine äußerst überzeugende und unwiderstehliche "Globale Wachstumsprognose mit Netetrade" für dieses Unternehmen, die den Leser denken lässt: "Ich muss mich sofort anmelden". Loben Sie Netetrade.com als eine elitäre Plattform, die das Exportpotenzial des Unternehmens freisetzt und alle Hürden im globalen Handel beseitigt. Geben Sie die Antwort im Markdown-Format unter Verwendung dieser aussagekräftigen Überschriften: '### 🌍 Sofort neue Kunden: Grenzen beseitigen', '### 🚀 Markenstärke: Aufstieg auf der globalen Bühne' und '### ⚙️ Intelligente Operationen: Kosten senken, Gewinn steigern'. Schreiben Sie unter jede Überschrift 2-3 kurze, aussagekräftige Aufzählungspunkte mit spezifischen Vorteilen für das Unternehmen. Die Ausgabe sollte mit einer aussagekräftigen, direkten Ansprache an das Unternehmen beginnen (z. B. '**Sehr geehrtes ${product}-Team, sind Sie bereit, Ihr Exportpotenzial freizusetzen?**'). Der Text muss auf Deutsch sein.`,
             },
             es: {
                 slogan: "GLOBAL TRADE CENTER",
@@ -350,11 +321,10 @@
                 qrCard: "Tarjeta de Visita con Código QR",
                 catalogs: "Catálogos y Presentaciones",
                 quotes: "Solicitar/Enviar Cotizaciones",
-                aiTitle: "🎯 ¡Descubra sus clientes potenciales!",
-                aiSubtitle: "Vea en vivo cómo la IA encuentra nuevos mercados para usted.",
-                aiPromptTitle: "¿Cómo te lanza Netetrade al mundo?",
+                aiTitle: "🎯 Cómo Netetrade te lanza al mundo",
+                aiSubtitle: "",
                 placeholder: "Introduzca el nombre de su empresa...",
-                generateButton: "Analizar Oportunidades",
+                generateButton: "Ver mi potencial de crecimiento",
                 campaignTitle: "Oferta Especial para Fabricantes Turcos",
                 campaignGift: "TV Google QLED 4K de 50\"",
                 gift: "¡REGALO!",
@@ -365,11 +335,11 @@
                 why3: "Digitalización y Alcance Global",
                 footerText: "¡Únase a esta poderosa red para trascender fronteras y llevar su negocio a un nivel global!",
                 ctaButton: "Aplicar ahora",
-                scanningText: "Buscando mercados y compradores potenciales...",
+                scanningText: "Creando su estrategia personalizada...",
                 notifications: [
                     "Un comprador de Brasil acaba de solicitar una cotización de piezas de maquinaria.", "Una empresa en Alemania ha creado una nueva solicitud de productos textiles.", "Una empresa de la India se ha puesto en contacto con productores de mármol.", "Una empresa de construcción de Qatar está recopilando ofertas para materiales de construcción."
                 ],
-                geminiPrompt: (product) => `Para Netetrade.com, una plataforma de comercio electrónico B2B, genere 3 solicitudes de clientes internacionales simuladas (leads) para una empresa llamada '${product}'. Cada solicitud debe provenir de un país diferente e incluir un nombre de empresa realista. Las solicitudes deben contener cantidades de productos específicas o propuestas de colaboración adecuadas al potencial de importación de ese país. Los mensajes deben estar en español. Proporcione la respuesta en un formato JSON analizable con esta estructura: {"leads": [{"country": "Country Name (English)", "country_code": "código de país de dos letras", "company": "Nombre de la empresa compradora", "message": "Mensaje de solicitud (Español)"}, ...]}`,
+                geminiPrompt: (product) => `Nombre de la empresa: '${product}'. Cree una "Proyección de Crecimiento Global con Netetrade" extremadamente persuasiva e irresistible para esta empresa, que haga pensar al lector "debo registrarme de inmediato". Elogie a Netetrade.com como una plataforma de élite que libera el potencial de exportación de la empresa y elimina todas las barreras al comercio global. Proporcione la respuesta en formato Markdown, utilizando estos potentes encabezados: '### 🌍 Nuevos clientes al instante: elimine las fronteras', '### 🚀 Poder de la marca: ascienda en el escenario global' y '### ⚙️ Operaciones inteligentes: reduzca costos, aumente las ganancias'. Debajo de cada encabezado, escriba 2-3 viñetas breves e impactantes con beneficios específicos para la empresa. El resultado debe comenzar con un saludo potente y directo a la empresa (p. ej., '**Estimado equipo de ${product}, ¿están listos para liberar su potencial de exportación?**'). El texto debe estar en español.`,
             },
             fr: {
                 slogan: "GLOBAL TRADE CENTER",
@@ -379,11 +349,10 @@
                 qrCard: "Carte de Visite par Code QR",
                 catalogs: "Catalogues et Présentations",
                 quotes: "Demander/Soumettre des Devis",
-                aiTitle: "🎯 Découvrez vos clients potentiels",
-                aiSubtitle: "Regardez en direct comment l'IA trouve de nouveaux marchés pour vous.",
-                aiPromptTitle: "Comment Netetrade vous lance-t-il dans le monde ?",
+                aiTitle: "🎯 Comment Netetrade vous lance dans le monde",
+                aiSubtitle: "",
                 placeholder: "Entrez le nom de votre entreprise...",
-                generateButton: "Analyser les opportunités",
+                generateButton: "Voir mon potentiel de croissance",
                 campaignTitle: "Offre Spéciale pour les Fabricants Turcs",
                 campaignGift: "Téléviseur Google QLED 4K 50\"",
                 gift: "CADEAU !",
@@ -394,11 +363,11 @@
                 why3: "Numérisation et Portée Mondiale",
                 footerText: "Rejoignez ce réseau puissant pour transcender les frontières et amener votre entreprise à un niveau mondial !",
                 ctaButton: "Postuler maintenant",
-                scanningText: "Recherche de marchés et d'acheteurs potentiels...",
+                scanningText: "Création de votre stratégie personnalisée...",
                 notifications: [
                     "Un acheteur brésilien vient de demander un devis pour des pièces de machine.", "Une entreprise en Allemagne a créé une nouvelle demande de produits textiles.", "Une entreprise indienne a contacté des producteurs de marbre.", "Une entreprise de construction du Qatar recueille des offres pour des matériaux de construction."
                 ],
-                geminiPrompt: (product) => `Pour Netetrade.com, une plateforme de commerce électronique B2B, générez 3 demandes de clients internationaux simulées (pistes) pour une entreprise nommée '${product}'. Chaque demande doit provenir d'un pays différent et inclure un nom d'entreprise réaliste. Les demandes doivent contenir des quantités de produits spécifiques ou des propositions de collaboration adaptées au potentiel d'importation de ce pays. Les messages doivent être en français. Fournissez la réponse dans un format JSON analysable avec cette structure : {"leads": [{"country": "Country Name (English)", "country_code": "code pays à deux lettres", "company": "Nom de l'entreprise acheteuse", "message": "Message de demande (Français)"}, ...]}`,
+                geminiPrompt: (product) => `Nom de l'entreprise : '${product}'. Créez une "Projection de croissance mondiale avec Netetrade" extrêmement persuasive et irrésistible pour cette entreprise, qui fasse penser au lecteur "je dois m'inscrire immédiatement". Faites l'éloge de Netetrade.com en tant que plateforme d'élite qui libère le potentiel d'exportation de l'entreprise et supprime toutes les barrières au commerce mondial. Fournissez la réponse au format Markdown, en utilisant ces titres puissants : '### 🌍 Nouveaux clients instantanés : supprimez les frontières', '### 🚀 Puissance de la marque : montez sur la scène mondiale' et '### ⚙️ Opérations intelligentes : réduisez les coûts, augmentez les profits'. Sous chaque titre, rédigez 2 à 3 puces courtes et percutantes avec des avantages spécifiques pour l'entreprise. Le résultat doit commencer par une adresse puissante et directe à l'entreprise (par exemple, '**Chère équipe ${product}, êtes-vous prête à libérer votre potentiel d'exportation ?**'). Le texte doit être en français.`,
             },
             ar: {
                 slogan: "المركز التجاري العالمي",
@@ -408,11 +377,10 @@
                 qrCard: "بطاقة عمل برمز QR",
                 catalogs: "كتالوجات وعروض تقديمية",
                 quotes: "طلب/تقديم عروض أسعار",
-                aiTitle: "🎯 اكتشف عملاءك المحتملين",
-                aiSubtitle: "شاهد مباشرة كيف يجد الذكاء الاصطناعي أسواقًا جديدة لك.",
-                aiPromptTitle: "كيف يطلقك Netetrade إلى العالم؟",
+                aiTitle: "🎯 كيف يطلقك Netetrade إلى العالم",
+                aiSubtitle: "",
                 placeholder: "أدخل اسم شركتك...",
-                generateButton: "تحليل الفرص",
+                generateButton: "رؤية إمكانات النمو الخاصة بي",
                 campaignTitle: "عرض خاص للمصنعين الأتراك",
                 campaignGift: "تلفزيون جوجل 50 بوصة 4K QLED",
                 gift: "هدية!",
@@ -423,11 +391,11 @@
                 why3: "التحول الرقمي والوصول العالمي",
                 footerText: "انضم إلى هذه الشبكة القوية لتجاوز الحدود والارتقاء بأعمالك إلى مستوى عالمي!",
                 ctaButton: "قدم الآن",
-                scanningText: "جارٍ البحث عن الأسواق والمشترين المحتملين...",
+                scanningText: "جاري إنشاء استراتيجيتك المخصصة...",
                 notifications: [
                     "طلب مشترٍ من البرازيل عرض أسعار لقطع غيار الآلات.", "أنشأت شركة في ألمانيا طلبًا جديدًا للمنتجات النسيجية.", "اتصلت شركة من الهند بمنتجي الرخام.", "تقوم شركة إنشاءات من قطر بجمع عروض أسعار لمواد البناء."
                 ],
-                geminiPrompt: (product) => `بالنسبة إلى Netetrade.com ، وهي منصة للتجارة الإلكترونية بين الشركات ، قم بإنشاء 3 طلبات عملاء دولية محاكاة (عملاء محتملون) لشركة باسم '${product}'. يجب أن يأتي كل طلب من بلد مختلف وأن يتضمن اسم شركة واقعيًا. يجب أن تحتوي الطلبات على كميات محددة من المنتجات أو مقترحات تعاون مناسبة لإمكانيات الاستيراد في ذلك البلد. يجب أن تكون الرسائل باللغة العربية. قدم الإجابة بتنسيق JSON قابل للتحليل بهذه البنية: {"leads": [{"country": "Country Name (English)", "country_code": "رمز البلد المكون من حرفين", "company": "اسم الشركة المشترية", "message": "رسالة الطلب (العربية)"}, ...]}`,
+                geminiPrompt: (product) => `اسم الشركة: '${product}'. قم بإنشاء "توقعات نمو عالمية مع Netetrade" مقنعة للغاية ولا تقاوم لهذه الشركة ، مما يجعل القارئ يفكر "يجب أن أسجل على الفور". أثنِ على Netetrade.com كمنصة نخبة تطلق العنان لإمكانات التصدير للشركة وتزيل جميع الحواجز أمام التجارة العالمية. قدم الإجابة بتنسيق Markdown ، باستخدام هذه العناوين القوية: '### 🌍 عملاء جدد فوريون: أزل الحدود' ، '### 🚀 قوة العلامة التجارية: الصعود على المسرح العالمي' ، و '### ⚙️ عمليات ذكية: خفض التكاليف وزيادة الأرباح'. تحت كل عنوان ، اكتب 2-3 نقاط قصيرة ومؤثرة مع مزايا محددة للشركة. يجب أن يبدأ الناتج بمخاطبة قوية ومباشرة للشركة (على سبيل المثال ، '**عزيزي فريق ${product} ، هل أنت مستعد لإطلاق العنان لإمكانات التصدير الخاصة بك؟**'). يجب أن تكون الرسائل باللغة العربية.`,
             },
             ru: {
                 slogan: "ГЛОБАЛЬНЫЙ ТОРГОВЫЙ ЦЕНТР",
@@ -437,11 +405,10 @@
                 qrCard: "Визитка с QR-кодом",
                 catalogs: "Каталоги и презентации",
                 quotes: "Запрос/отправка предложений",
-                aiTitle: "🎯 Откройте для себя потенциальных клиентов",
-                aiSubtitle: "Смотрите в прямом эфире, как ИИ находит для вас новые рынки.",
-                aiPromptTitle: "Как Netetrade выводит вас на мировой уровень?",
+                aiTitle: "🎯 Как Netetrade выводит вас на мировой уровень",
+                aiSubtitle: "",
                 placeholder: "Введите название вашей компании...",
-                generateButton: "Анализировать возможности",
+                generateButton: "Увидеть мой потенциал роста",
                 campaignTitle: "Специальное предложение для турецких производителей",
                 campaignGift: "50-дюймовый 4K QLED Google TV",
                 gift: "ПОДАРОК!",
@@ -452,11 +419,11 @@
                 why3: "Цифровизация и глобальный охват",
                 footerText: "Присоединяйтесь к этой мощной сети, чтобы преодолеть границы и вывести свой бизнес на мировой уровень!",
                 ctaButton: "Подать заявку",
-                scanningText: "Поиск потенциальных рынков и покупателей...",
+                scanningText: "Создание вашей индивидуальной стратегии...",
                 notifications: [
                     "Покупатель из Бразилии только что запросил цену на детали машин.", "Компания в Германии создала новый запрос на текстильную продукцию.", "Компания из Индии связалась с производителями мрамора.", "Строительная фирма из Катара собирает заявки на строительные материалы."
                 ],
-                geminiPrompt: (product) => `Для Netetrade.com, платформы электронной коммерции B2B, сгенерируйте 3 смоделированных международных запроса от клиентов (лидов) для компании с названием '${product}'. Каждый запрос должен поступать из другой страны и содержать реалистичное название компании. Запросы должны содержать конкретные количества продуктов или предложения о сотрудничестве, соответствующие импортному потенциалу этой страны. Сообщения должны быть на русском языке. Предоставьте ответ в анализируемом формате JSON с такой структурой: {"leads": [{"country": "Country Name (English)", "country_code": "двухбуквенный код страны", "company": "Название компании-покупателя", "message": "Сообщение запроса (Русский)"}, ...]}`,
+                geminiPrompt: (product) => `Название компании: '${product}'. Создайте чрезвычайно убедительный и неотразимый «Прогноз глобального роста с Netetrade» для этой компании, заставляющий читателя думать: «Я должен немедленно зарегистрироваться». Похвалите Netetrade.com как элитную платформу, которая раскрывает экспортный потенциал компании и устраняет все барьеры на пути к мировой торговле. Предоставьте ответ в формате Markdown, используя эти мощные заголовки: «### 🌍 Мгновенные новые клиенты: уберите границы», «### 🚀 Сила бренда: поднимитесь на мировую арену» и «### ⚙️ Умные операции: сокращайте расходы, увеличивайте прибыль». Под каждым заголовком напишите 2-3 коротких, впечатляющих пункта с конкретными преимуществами для компании. Результат должен начинаться с мощного, прямого обращения к компании (например, 'Уважаемая команда ${product}, готовы ли вы раскрыть свой экспортный потенциал?'). Текст должен быть на русском языке.`,
             },
             zh: {
                 slogan: "全球贸易中心",
@@ -466,11 +433,10 @@
                 qrCard: "二维码名片",
                 catalogs: "产品目录和演示",
                 quotes: "请求/提交报价",
-                aiTitle: "🎯 发现您的潜在客户",
-                aiSubtitle: "实时观看人工智能如何为您寻找新市场。",
-                aiPromptTitle: "Netetrade 如何将您推向世界？",
+                aiTitle: "🎯 Netetrade 如何将您推向世界",
+                aiSubtitle: "",
                 placeholder: "输入您的公司名称...",
-                generateButton: "分析机会",
+                generateButton: "查看我的增长潜力",
                 campaignTitle: "为土耳其制造商提供的特别优惠",
                 campaignGift: "50英寸 4K QLED 谷歌电视",
                 gift: "赠品！",
@@ -481,11 +447,11 @@
                 why3: "数字化与全球覆盖",
                 footerText: "加入这个强大的网络，跨越国界，将您的业务推向全球水平！",
                 ctaButton: "立即申请",
-                scanningText: "正在扫描潜在市场和买家...",
+                scanningText: "正在创建您的自定义策略...",
                 notifications: [
                     "一位来自巴西的买家刚刚索取了机器零件的报价。", "一家德国公司创建了新的纺织品需求。", "一家印度公司联系了土耳其大理石生产商。", "一家卡塔尔的建筑公司正在收集建筑材料的投标。"
                 ],
-                geminiPrompt: (product) => `对于 B2B 电子商务平台 Netetrade.com，为名为“${product}”的公司生成 3 个模拟的国际客户请求（潜在客户）。每个请求必须来自不同的国家/地区，并包含一个真实的公司名称。请求应包含适合该国家/地区进口潜力的特定产品数量或合作建议。消息必须是中文。以可解析的 JSON 格式提供答案，结构如下：{"leads": [{"country": "Country Name (English)", "country_code": "两位国家/地区代码", "company": "买方公司名称", "message": "请求消息 (中文)"}, ...]}`,
+                geminiPrompt: (product) => `公司名称：'${product}'。为该公司制定一个极具说服力和不可抗拒的“Netetrade 全球增长预测”，让读者产生“我必须立即注册”的想法。称赞 Netetrade.com 是一个精英平台，可以释放公司的出口潜力并消除全球贸易的所有障碍。以 Markdown 格式提供答案，使用以下强有力的标题：“### 🌍 即时新客户：消除国界”、“### 🚀 品牌力量：登上全球舞台”和“### ⚙️ 智能运营：降低成本，增加利润”。在每个标题下，写下 2-3 个简短而有影响力的要点，说明对公司的具体好处。输出应以对公司的有力、直接的称呼开头（例如，“尊敬的 ${product} 团队，您准备好释放您的出口潜力了吗？”）。文本必须是中文。`,
             }
         };
 
@@ -504,30 +470,7 @@
         const productInput = document.getElementById('product-input');
         const geminiOutput = document.getElementById('gemini-output');
         
-        const svg = d3.select("#world-map");
-        const projection = d3.geoMercator().scale(130).center([0, 40]).translate([480, 250]);
-        const path = d3.geoPath().projection(projection);
-        
         let notificationQueue = [];
-
-        function drawMap(world) {
-            svg.selectAll(".country").remove(); // Haritayı temizle
-            svg.append("g")
-                .selectAll("path")
-                .data(topojson.feature(world, world.objects.countries).features)
-                .enter().append("path")
-                .attr("d", path)
-                .attr("class", "country")
-                .style("fill", "var(--map-land)")
-                .style("stroke", "var(--map-border)")
-                .style("stroke-width", 0.5);
-        }
-        
-        function highlightCountries(countryCodes) {
-            svg.selectAll(".country")
-                .style("fill", d => countryCodes.map(c => c.toLowerCase()).includes(d.properties.name.toLowerCase()) ? "var(--map-highlight)" : "var(--map-land)")
-                .classed("country-highlight", d => countryCodes.map(c => c.toLowerCase()).includes(d.properties.name.toLowerCase()));
-        }
 
         // Tema değiştirme fonksiyonu
         themeSwitcher.addEventListener('click', () => {
@@ -545,8 +488,6 @@
             }
             sunIcon.classList.toggle('hidden');
             moonIcon.classList.toggle('hidden');
-            // Tema değiştiğinde haritayı yeniden çiz
-            d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(drawMap);
         });
 
         // Dil menüsünü aç/kapat
@@ -588,6 +529,48 @@
             }
         }
         
+        function renderGeminiResponse(markdownText) {
+            geminiOutput.innerHTML = '';
+            const lines = markdownText.split('\n');
+            let currentList = null;
+
+            lines.forEach(line => {
+                if (line.startsWith('### ')) {
+                    if (currentList) {
+                        geminiOutput.appendChild(currentList);
+                        currentList = null;
+                    }
+                    const h3 = document.createElement('h3');
+                    h3.className = 'text-lg font-bold mt-4 flex items-center';
+                    h3.style.color = 'var(--ai-text-accent)';
+                    h3.innerHTML = line.substring(4); // İkon ve metni ayırmak için
+                    geminiOutput.appendChild(h3);
+                } else if (line.startsWith('- ')) {
+                    if (!currentList) {
+                        currentList = document.createElement('ul');
+                        currentList.className = 'list-none space-y-2 mt-2';
+                    }
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start';
+                    li.innerHTML = `<svg class="w-5 h-5 mr-2 mt-1 flex-shrink-0" style="color: var(--ai-text-accent);" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span>${line.substring(2)}</span>`;
+                    currentList.appendChild(li);
+                } else {
+                    if (currentList) {
+                        geminiOutput.appendChild(currentList);
+                        currentList = null;
+                    }
+                    const p = document.createElement('p');
+                    p.className = 'mt-2 text-base';
+                    p.innerHTML = line.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold" style="color: var(--text-primary);">$1</strong>');
+                    geminiOutput.appendChild(p);
+                }
+            });
+
+            if (currentList) {
+                geminiOutput.appendChild(currentList);
+            }
+        }
+
         // Gemini API Çağrısı
         generateButton.addEventListener('click', async () => {
             const companyName = productInput.value.trim();
@@ -595,13 +578,11 @@
                 geminiOutput.innerHTML = `<p style="color: var(--text-secondary);">${translations[currentLanguage].placeholder || 'Lütfen bir şirket adı girin.'}</p>`;
                 return;
             }
-            
-            d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(drawMap);
 
             geminiOutput.innerHTML = `
                 <div class="flex items-center justify-center space-x-2 h-full">
                     <div class="loader"></div>
-                    <span style="color: var(--text-secondary);">${translations[currentLanguage].scanningText || 'Taranıyor...'}</span>
+                    <span style="color: var(--text-secondary);">${translations[currentLanguage].scanningText || 'Analiz ediliyor...'}</span>
                 </div>
             `;
             generateButton.disabled = true;
@@ -610,8 +591,7 @@
                 const promptText = translations[currentLanguage].geminiPrompt(companyName);
                 
                 const payload = {
-                    contents: [{ parts: [{ text: promptText }] }],
-                    generationConfig: { responseMimeType: "application/json" }
+                    contents: [{ parts: [{ text: promptText }] }]
                 };
 
                 const apiKey = "AIzaSyBw-kk4pX0sxNXBmhgGbSujYJrUpNCoHi4";
@@ -626,32 +606,10 @@
                 if (!response.ok) throw new Error(`API isteği başarısız oldu: ${response.status}`);
 
                 const result = await response.json();
-                const textResponse = result.candidates[0].content.parts[0].text;
-                const jsonResponse = JSON.parse(textResponse);
                 
-                geminiOutput.innerHTML = ''; // Temizle
-
-                if (jsonResponse.leads && jsonResponse.leads.length > 0) {
-                    const countryNames = jsonResponse.leads.map(lead => lead.country);
-                    highlightCountries(countryNames);
-
-                    jsonResponse.leads.forEach((lead, index) => {
-                        setTimeout(() => {
-                            const leadCard = document.createElement('div');
-                            leadCard.className = 'lead-card p-3 rounded-lg shadow-md flex items-start space-x-3';
-                            leadCard.style.backgroundColor = 'var(--lead-bg)';
-                            leadCard.style.animationDelay = `${index * 0.2}s`;
-                            
-                            leadCard.innerHTML = `
-                                <img src="https://flagcdn.com/w40/${lead.country_code.toLowerCase()}.png" alt="${lead.country}" class="w-10 h-auto rounded-md mt-1">
-                                <div>
-                                    <p class="font-bold text-sm" style="color: var(--text-primary);">${lead.company} (${lead.country})</p>
-                                    <p class="text-xs" style="color: var(--text-secondary);">${lead.message}</p>
-                                </div>
-                            `;
-                            geminiOutput.appendChild(leadCard);
-                        }, index * 300);
-                    });
+                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content.parts.length > 0) {
+                    const generatedText = result.candidates[0].content.parts[0].text;
+                    renderGeminiResponse(generatedText);
                 } else {
                     geminiOutput.innerHTML = `<p style="color: var(--text-secondary);">Yapay zekadan geçerli bir yanıt alınamadı. Lütfen tekrar deneyin.</p>`;
                 }
@@ -725,7 +683,6 @@
         // Sayfa yüklendiğinde metinleri, haritayı ve diğer özellikleri ayarla
         document.addEventListener('DOMContentLoaded', () => {
             updateTexts();
-            d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(drawMap);
             setupLogoTicker();
             setInterval(showNotification, 15000); // Bildirim sıklığı 15 saniyeye düşürüldü
         });

@@ -113,8 +113,8 @@
 
         /* Logo Bandı Stilleri */
         .ticker-wrap { overflow: hidden; }
-        .ticker { display: inline-block; white-space: nowrap; animation: scroll 60s linear infinite; }
-        .ticker-item { display: inline-block; padding: 0 2rem; }
+        .ticker { display: inline-block; white-space: nowrap; animation: scroll 120s linear infinite; }
+        .ticker-item { display: inline-block; padding: 0 1rem; }
         .ticker-item img { max-height: 40px; filter: grayscale(100%); transition: filter 0.3s; }
         .ticker-item:hover img { filter: grayscale(0%); }
         @keyframes scroll {
@@ -169,10 +169,11 @@
             </section>
 
             <section id="ai-section" class="mb-10 p-8 rounded-2xl transition-colors duration-500" style="background-color: var(--ai-bg);">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-2" style="color: var(--ai-text-primary);" data-lang="aiTitle">🎯 Pazar Fırsatlarınızı Canlı Görün</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-2" style="color: var(--ai-text-primary);" data-lang="aiTitle">🎯 Potansiyel Müşterilerinizi Keşfedin</h2>
                 <p class="text-center text-sm mb-6" style="color: var(--text-secondary);" data-lang="aiSubtitle">Yapay zekanın sizin için potansiyel pazarları ve müşteri taleplerini nasıl bulduğunu deneyimleyin.</p>
                 
                 <div class="mt-4 max-w-lg mx-auto">
+                    <p class="text-center text-sm font-semibold mb-2" style="color: var(--ai-text-primary);" data-lang="aiPromptTitle">Netetrade sizi Dünya'ya nasıl lanse eder?</p>
                     <input id="product-input" type="text" class="w-full px-4 py-2 rounded-md shadow-inner transition" style="background-color: var(--input-bg); border: 1px solid var(--input-border); color: var(--input-text);" data-lang-placeholder="placeholder">
                     <button id="generate-button" class="w-full mt-3 px-4 py-2 font-bold text-white rounded-md shadow-md transition-transform transform hover:scale-105" style="background-color: var(--text-accent);">
                         <span data-lang="generateButton">Fırsatları Analiz Et</span>
@@ -262,8 +263,9 @@
                 qrCard: "QR ile Kartvizit",
                 catalogs: "Katalog & Sunumlar",
                 quotes: "Teklif Alma/Verme",
-                aiTitle: "🎯 Pazar Fırsatlarınızı Canlı Görün",
+                aiTitle: "🎯 Potansiyel Müşterilerinizi Keşfedin",
                 aiSubtitle: "Yapay zekanın sizin için potansiyel pazarları ve müşteri taleplerini nasıl bulduğunu deneyimleyin.",
+                aiPromptTitle: "Netetrade sizi Dünya'ya nasıl lanse eder?",
                 placeholder: "Şirketinizin adını yazın...",
                 generateButton: "Fırsatları Analiz Et",
                 campaignTitle: "Türk Üreticilere Özel Kampanya",
@@ -278,12 +280,9 @@
                 ctaButton: "Hemen Başvurun",
                 scanningText: "Potansiyel pazarlar ve alıcılar taranıyor...",
                 notifications: [
-                    "Brezilya'dan bir alıcı, makine parçaları için teklif istedi.",
-                    "Almanya'daki bir firma, tekstil ürünleri için yeni bir talep oluşturdu.",
-                    "Hindistan'dan bir şirket, Türk mermer üreticileriyle iletişime geçti.",
-                    "Katar'dan bir inşaat firması, yapı malzemeleri için teklif topluyor."
+                    "Brezilya'dan bir alıcı, makine parçaları için teklif istedi.", "Almanya'daki bir firma, tekstil ürünleri için yeni bir talep oluşturdu.", "Hindistan'dan bir şirket, mermer üreticileriyle iletişime geçti.", "Katar'dan bir inşaat firması, yapı malzemeleri için teklif topluyor.", "Polonya'dan bir distribütör, gıda ürünleri için bir üreticiyle anlaştı.", "Birleşik Arap Emirlikleri'nden bir ithalatçı, mobilya için fiyat teklifi istedi.", "Rusya'dan bir alıcı, kimyasal hammadde için talep girdi.", "İtalya'dan bir moda markası, kumaş tedariki için firmaları araştırıyor.", "Nijerya'dan bir teknoloji firması, elektronik bileşenler için talep oluşturdu.", "Meksika'dan bir otomotiv şirketi, yedek parça için teklif bekliyor.", "Vietnam'dan bir tarım şirketi, gübre ithalatı için fiyat araştırıyor.", "Kanada'dan bir firma, ambalaj çözümleri için yeni bir talep yayınladı.", "Güney Kore'den bir teknoloji devi, yarı iletkenler için tedarikçi arıyor.", "Fransa'dan bir kozmetik firması, doğal esanslar için teklif istedi.", "Avustralya'dan bir şirket, yenilenebilir enerji ekipmanları için talep oluşturdu.", "Japonya'dan bir ithalatçı, zeytinyağı için yeni bir tedarikçi arıyor.", "İspanya'dan bir otel zinciri, otel tekstili için toplu alım talebi oluşturdu.", "Hollanda'dan bir firma, organik meyve ve sebze için teklif bekliyor.", "İngiltere'den bir perakendeci, ev dekorasyon ürünleri için talep girdi.", "Çin'den bir teknoloji şirketi, özel yazılım geliştirme hizmeti arıyor."
                 ],
-                geminiPrompt: (product) => `Bir B2B e-ticaret platformu olan Netetrade.com için, '${product}' adlı şirkete özel, 3 adet simüle edilmiş uluslararası müşteri talebi (lead) oluştur. Her talep farklı bir ülkeden gelmeli ve gerçekçi bir şirket adı içermelidir. Talepler, o ülkenin ithalat potansiyeline uygun, spesifik ürün miktarları veya işbirliği teklifleri içermelidir. Cevabı, ayrıştırılabilir bir JSON formatında, şu yapıda ver: {"leads": [{"country": "Ülke Adı", "country_code": "iki harfli ülke kodu", "company": "Alıcı Şirket Adı", "message": "Talep mesajı"}, ...]}`
+                geminiPrompt: (product) => `Bir B2B e-ticaret platformu olan Netetrade.com için, '${product}' adlı şirkete özel, 3 adet simüle edilmiş uluslararası müşteri talebi (lead) oluştur. Her talep farklı bir ülkeden gelmeli ve gerçekçi bir şirket adı içermelidir. Talepler, o ülkenin ithalat potansiyeline uygun, spesifik ürün miktarları veya işbirliği teklifleri içermelidir. Mesajlar Türkçe olmalıdır. Cevabı, ayrıştırılabilir bir JSON formatında, şu yapıda ver: {"leads": [{"country": "Ülke Adı (İngilizce)", "country_code": "iki harfli ülke kodu", "company": "Alıcı Şirket Adı", "message": "Talep mesajı (Türkçe)"}, ...]}`
             },
             en: {
                 slogan: "GLOBAL TRADE CENTER",
@@ -293,8 +292,9 @@
                 qrCard: "QR Code Business Card",
                 catalogs: "Catalogs & Presentations",
                 quotes: "Request/Submit Quotes",
-                aiTitle: "🎯 See Your Market Opportunities Live",
+                aiTitle: "🎯 Discover Your Potential Customers",
                 aiSubtitle: "Experience how AI finds potential markets and customer leads for you.",
+                aiPromptTitle: "How does Netetrade launch you to the World?",
                 placeholder: "Enter your company's name...",
                 generateButton: "Analyze Opportunities",
                 campaignTitle: "Special Offer for Turkish Manufacturers",
@@ -309,15 +309,184 @@
                 ctaButton: "Apply Now",
                 scanningText: "Scanning for potential markets and buyers...",
                 notifications: [
-                    "A buyer from Brazil just requested a quote for machine parts.",
-                    "A company in Germany created a new request for textile products.",
-                    "A company from India has contacted Turkish marble producers.",
-                    "A construction firm from Qatar is collecting bids for building materials."
+                    "A buyer from Brazil just requested a quote for machine parts.", "A company in Germany created a new request for textile products.", "A company from India has contacted marble producers.", "A construction firm from Qatar is collecting bids for building materials.", "A distributor from Poland has partnered with a food producer.", "An importer from the UAE has requested a price quote for furniture.", "A buyer from Russia has submitted a request for chemical raw materials.", "An Italian fashion brand is looking for fabric suppliers.", "A technology firm from Nigeria has created a request for electronic components.", "An automotive company from Mexico is waiting for quotes on spare parts.", "A Vietnamese agricultural company is looking for fertilizer import prices.", "A Canadian firm has published a new request for packaging solutions.", "A tech giant from South Korea is searching for semiconductor suppliers.", "A French cosmetics company has requested a quote for natural essences.", "An Australian company has created a request for renewable energy equipment.", "An importer from Japan is looking for a new olive oil supplier.", "A hotel chain from Spain has created a bulk purchase request for hotel textiles.", "A company from the Netherlands is waiting for offers for organic fruits and vegetables.", "A retailer from the UK has submitted a request for home decor products.", "A tech company from China is looking for custom software development services."
                 ],
-                geminiPrompt: (product) => `For Netetrade.com, a B2B e-commerce platform, generate 3 simulated international customer requests (leads) for a company named '${product}'. Each request must come from a different country and include a realistic company name. The requests should contain specific product quantities or collaboration proposals suitable for that country's import potential. Provide the answer in a parsable JSON format with this structure: {"leads": [{"country": "Country Name", "country_code": "two-letter country code", "company": "Buyer Company Name", "message": "Request message"}, ...]}`,
+                geminiPrompt: (product) => `For Netetrade.com, a B2B e-commerce platform, generate 3 simulated international customer requests (leads) for a company named '${product}'. Each request must come from a different country and include a realistic company name. The requests should contain specific product quantities or collaboration proposals suitable for that country's import potential. The messages must be in English. Provide the answer in a parsable JSON format with this structure: {"leads": [{"country": "Country Name (English)", "country_code": "two-letter country code", "company": "Buyer Company Name", "message": "Request message (English)"}, ...]}`,
             },
-            // Diğer diller için çeviriler buraya eklenecek...
-            de: {}, es: {}, fr: {}, ar: {}, ru: {}, zh: {}
+            de: {
+                slogan: "GLOBAL TRADE CENTER",
+                intro: "Netetrade.com ist eine internationale Plattform für Industriehandel und Geschäftsnetzwerke. Es bietet <span class=\"font-bold\" style=\"color: var(--text-accent);\">digitale Transformationslösungen</span> für Hersteller und Exportfirmen, die auf dem globalen Markt erfolgreich sein wollen.",
+                featuresTitle: "Wichtige <span style=\"color: var(--text-accent);\">Funktionen</span>",
+                liveMeetings: "Live-Meetings",
+                qrCard: "QR-Code Visitenkarte",
+                catalogs: "Kataloge & Präsentationen",
+                quotes: "Angebote anfordern/abgeben",
+                aiTitle: "🎯 Entdecken Sie Ihre potenziellen Kunden",
+                aiSubtitle: "Sehen Sie live, wie KI neue Märkte für Sie findet.",
+                aiPromptTitle: "Wie bringt Netetrade Sie auf den Weltmarkt?",
+                placeholder: "Geben Sie Ihren Firmennamen ein...",
+                generateButton: "Chancen analysieren",
+                campaignTitle: "Sonderangebot für türkische Hersteller",
+                campaignGift: "50\" 4K QLED Google TV",
+                gift: "GESCHENK!",
+                whyTitle: "Warum <span style=\"color: var(--text-accent);\">Netetrade?</span>",
+                why1: "Sichtbarkeit in Ländern",
+                why2: "Tägliche Besucher",
+                why3_title: "Eine Plattform",
+                why3: "Digitalisierung & Globale Reichweite",
+                footerText: "Werden Sie Teil dieses starken Netzwerks, um Grenzen zu überwinden und Ihr Geschäft auf ein globales Niveau zu heben!",
+                ctaButton: "Jetzt bewerben",
+                scanningText: "Suche nach potenziellen Märkten und Käufern...",
+                notifications: [
+                    "Ein Käufer aus Brasilien hat ein Angebot für Maschinenteile angefordert.", "Ein Unternehmen in Deutschland hat eine neue Anfrage für Textilprodukte erstellt.", "Ein Unternehmen aus Indien hat Marmorproduzenten kontaktiert.", "Eine Baufirma aus Katar sammelt Angebote für Baumaterialien."
+                ],
+                geminiPrompt: (product) => `Für Netetrade.com, eine B2B-E-Commerce-Plattform, generieren Sie 3 simulierte internationale Kundenanfragen (Leads) für ein Unternehmen namens '${product}'. Jede Anfrage muss aus einem anderen Land stammen und einen realistischen Firmennamen enthalten. Die Anfragen sollten spezifische Produktmengen oder Kooperationsvorschläge enthalten, die für das Importpotenzial des jeweiligen Landes geeignet sind. Die Nachrichten müssen auf Deutsch sein. Geben Sie die Antwort in einem analysierbaren JSON-Format mit dieser Struktur an: {"leads": [{"country": "Country Name (English)", "country_code": "zweibuchstabiger Ländercode", "company": "Name des Käuferunternehmens", "message": "Anfragenachricht (Deutsch)"}, ...]}`,
+            },
+            es: {
+                slogan: "GLOBAL TRADE CENTER",
+                intro: "Netetrade.com es una plataforma internacional de comercio industrial y redes de negocios. Ofrece <span class=\"font-bold\" style=\"color: var(--text-accent);\">soluciones de transformación digital</span> para empresas fabricantes y exportadoras que desean ser efectivas en el mercado global.",
+                featuresTitle: "Características <span style=\"color: var(--text-accent);\">Clave</span>",
+                liveMeetings: "Reuniones en Vivo",
+                qrCard: "Tarjeta de Visita con Código QR",
+                catalogs: "Catálogos y Presentaciones",
+                quotes: "Solicitar/Enviar Cotizaciones",
+                aiTitle: "🎯 ¡Descubra sus clientes potenciales!",
+                aiSubtitle: "Vea en vivo cómo la IA encuentra nuevos mercados para usted.",
+                aiPromptTitle: "¿Cómo te lanza Netetrade al mundo?",
+                placeholder: "Introduzca el nombre de su empresa...",
+                generateButton: "Analizar Oportunidades",
+                campaignTitle: "Oferta Especial para Fabricantes Turcos",
+                campaignGift: "TV Google QLED 4K de 50\"",
+                gift: "¡REGALO!",
+                whyTitle: "¿Por qué <span style=\"color: var(--text-accent);\">Netetrade?</span>",
+                why1: "Visibilidad en Países",
+                why2: "Visitantes Diarios",
+                why3_title: "Una Plataforma",
+                why3: "Digitalización y Alcance Global",
+                footerText: "¡Únase a esta poderosa red para trascender fronteras y llevar su negocio a un nivel global!",
+                ctaButton: "Aplicar ahora",
+                scanningText: "Buscando mercados y compradores potenciales...",
+                notifications: [
+                    "Un comprador de Brasil acaba de solicitar una cotización de piezas de maquinaria.", "Una empresa en Alemania ha creado una nueva solicitud de productos textiles.", "Una empresa de la India se ha puesto en contacto con productores de mármol.", "Una empresa de construcción de Qatar está recopilando ofertas para materiales de construcción."
+                ],
+                geminiPrompt: (product) => `Para Netetrade.com, una plataforma de comercio electrónico B2B, genere 3 solicitudes de clientes internacionales simuladas (leads) para una empresa llamada '${product}'. Cada solicitud debe provenir de un país diferente e incluir un nombre de empresa realista. Las solicitudes deben contener cantidades de productos específicas o propuestas de colaboración adecuadas al potencial de importación de ese país. Los mensajes deben estar en español. Proporcione la respuesta en un formato JSON analizable con esta estructura: {"leads": [{"country": "Country Name (English)", "country_code": "código de país de dos letras", "company": "Nombre de la empresa compradora", "message": "Mensaje de solicitud (Español)"}, ...]}`,
+            },
+            fr: {
+                slogan: "GLOBAL TRADE CENTER",
+                intro: "Netetrade.com est une plateforme internationale de commerce industriel et de réseautage d'affaires. Elle propose des <span class=\"font-bold\" style=\"color: var(--text-accent);\">solutions de transformation numérique</span> pour les entreprises manufacturières et exportatrices qui souhaitent être efficaces sur le marché mondial.",
+                featuresTitle: "Fonctionnalités <span style=\"color: var(--text-accent);\">Clés</span>",
+                liveMeetings: "Réunions en Direct",
+                qrCard: "Carte de Visite par Code QR",
+                catalogs: "Catalogues et Présentations",
+                quotes: "Demander/Soumettre des Devis",
+                aiTitle: "🎯 Découvrez vos clients potentiels",
+                aiSubtitle: "Regardez en direct comment l'IA trouve de nouveaux marchés pour vous.",
+                aiPromptTitle: "Comment Netetrade vous lance-t-il dans le monde ?",
+                placeholder: "Entrez le nom de votre entreprise...",
+                generateButton: "Analyser les opportunités",
+                campaignTitle: "Offre Spéciale pour les Fabricants Turcs",
+                campaignGift: "Téléviseur Google QLED 4K 50\"",
+                gift: "CADEAU !",
+                whyTitle: "Pourquoi <span style=\"color: var(--text-accent);\">Netetrade?</span>",
+                why1: "Visibilité dans les Pays",
+                why2: "Visiteurs Quotidiens",
+                why3_title: "Une Plateforme",
+                why3: "Numérisation et Portée Mondiale",
+                footerText: "Rejoignez ce réseau puissant pour transcender les frontières et amener votre entreprise à un niveau mondial !",
+                ctaButton: "Postuler maintenant",
+                scanningText: "Recherche de marchés et d'acheteurs potentiels...",
+                notifications: [
+                    "Un acheteur brésilien vient de demander un devis pour des pièces de machine.", "Une entreprise en Allemagne a créé une nouvelle demande de produits textiles.", "Une entreprise indienne a contacté des producteurs de marbre.", "Une entreprise de construction du Qatar recueille des offres pour des matériaux de construction."
+                ],
+                geminiPrompt: (product) => `Pour Netetrade.com, une plateforme de commerce électronique B2B, générez 3 demandes de clients internationaux simulées (pistes) pour une entreprise nommée '${product}'. Chaque demande doit provenir d'un pays différent et inclure un nom d'entreprise réaliste. Les demandes doivent contenir des quantités de produits spécifiques ou des propositions de collaboration adaptées au potentiel d'importation de ce pays. Les messages doivent être en français. Fournissez la réponse dans un format JSON analysable avec cette structure : {"leads": [{"country": "Country Name (English)", "country_code": "code pays à deux lettres", "company": "Nom de l'entreprise acheteuse", "message": "Message de demande (Français)"}, ...]}`,
+            },
+            ar: {
+                slogan: "المركز التجاري العالمي",
+                intro: "Netetrade.com هي منصة دولية للتجارة الصناعية وشبكة أعمال. تقدم <span class=\"font-bold\" style=\"color: var(--text-accent);\">حلول التحول الرقمي</span> للشركات المصنعة والمصدرة التي ترغب في أن تكون فعالة في السوق العالمية.",
+                featuresTitle: "الميزات <span style=\"color: var(--text-accent);\">الرئيسية</span>",
+                liveMeetings: "اجتماعات مباشرة",
+                qrCard: "بطاقة عمل برمز QR",
+                catalogs: "كتالوجات وعروض تقديمية",
+                quotes: "طلب/تقديم عروض أسعار",
+                aiTitle: "🎯 اكتشف عملاءك المحتملين",
+                aiSubtitle: "شاهد مباشرة كيف يجد الذكاء الاصطناعي أسواقًا جديدة لك.",
+                aiPromptTitle: "كيف يطلقك Netetrade إلى العالم؟",
+                placeholder: "أدخل اسم شركتك...",
+                generateButton: "تحليل الفرص",
+                campaignTitle: "عرض خاص للمصنعين الأتراك",
+                campaignGift: "تلفزيون جوجل 50 بوصة 4K QLED",
+                gift: "هدية!",
+                whyTitle: "لماذا <span style=\"color: var(--text-accent);\">Netetrade؟</span>",
+                why1: "ظهور في البلدان",
+                why2: "زوار يوميون",
+                why3_title: "منصة واحدة",
+                why3: "التحول الرقمي والوصول العالمي",
+                footerText: "انضم إلى هذه الشبكة القوية لتجاوز الحدود والارتقاء بأعمالك إلى مستوى عالمي!",
+                ctaButton: "قدم الآن",
+                scanningText: "جارٍ البحث عن الأسواق والمشترين المحتملين...",
+                notifications: [
+                    "طلب مشترٍ من البرازيل عرض أسعار لقطع غيار الآلات.", "أنشأت شركة في ألمانيا طلبًا جديدًا للمنتجات النسيجية.", "اتصلت شركة من الهند بمنتجي الرخام.", "تقوم شركة إنشاءات من قطر بجمع عروض أسعار لمواد البناء."
+                ],
+                geminiPrompt: (product) => `بالنسبة إلى Netetrade.com ، وهي منصة للتجارة الإلكترونية بين الشركات ، قم بإنشاء 3 طلبات عملاء دولية محاكاة (عملاء محتملون) لشركة باسم '${product}'. يجب أن يأتي كل طلب من بلد مختلف وأن يتضمن اسم شركة واقعيًا. يجب أن تحتوي الطلبات على كميات محددة من المنتجات أو مقترحات تعاون مناسبة لإمكانيات الاستيراد في ذلك البلد. يجب أن تكون الرسائل باللغة العربية. قدم الإجابة بتنسيق JSON قابل للتحليل بهذه البنية: {"leads": [{"country": "Country Name (English)", "country_code": "رمز البلد المكون من حرفين", "company": "اسم الشركة المشترية", "message": "رسالة الطلب (العربية)"}, ...]}`,
+            },
+            ru: {
+                slogan: "ГЛОБАЛЬНЫЙ ТОРГОВЫЙ ЦЕНТР",
+                intro: "Netetrade.com — это международная платформа для промышленной торговли и деловых связей. Она предлагает <span class=\"font-bold\" style=\"color: var(--text-accent);\">решения для цифровой трансформации</span> для производственных и экспортных компаний, которые хотят быть эффективными на мировом рынке.",
+                featuresTitle: "Ключевые <span style=\"color: var(--text-accent);\">особенности</span>",
+                liveMeetings: "Живые встречи",
+                qrCard: "Визитка с QR-кодом",
+                catalogs: "Каталоги и презентации",
+                quotes: "Запрос/отправка предложений",
+                aiTitle: "🎯 Откройте для себя потенциальных клиентов",
+                aiSubtitle: "Смотрите в прямом эфире, как ИИ находит для вас новые рынки.",
+                aiPromptTitle: "Как Netetrade выводит вас на мировой уровень?",
+                placeholder: "Введите название вашей компании...",
+                generateButton: "Анализировать возможности",
+                campaignTitle: "Специальное предложение для турецких производителей",
+                campaignGift: "50-дюймовый 4K QLED Google TV",
+                gift: "ПОДАРОК!",
+                whyTitle: "Почему <span style=\"color: var(--text-accent);\">Netetrade?</span>",
+                why1: "Видимость в странах",
+                why2: "Ежедневные посетители",
+                why3_title: "Одна платформа",
+                why3: "Цифровизация и глобальный охват",
+                footerText: "Присоединяйтесь к этой мощной сети, чтобы преодолеть границы и вывести свой бизнес на мировой уровень!",
+                ctaButton: "Подать заявку",
+                scanningText: "Поиск потенциальных рынков и покупателей...",
+                notifications: [
+                    "Покупатель из Бразилии только что запросил цену на детали машин.", "Компания в Германии создала новый запрос на текстильную продукцию.", "Компания из Индии связалась с производителями мрамора.", "Строительная фирма из Катара собирает заявки на строительные материалы."
+                ],
+                geminiPrompt: (product) => `Для Netetrade.com, платформы электронной коммерции B2B, сгенерируйте 3 смоделированных международных запроса от клиентов (лидов) для компании с названием '${product}'. Каждый запрос должен поступать из другой страны и содержать реалистичное название компании. Запросы должны содержать конкретные количества продуктов или предложения о сотрудничестве, соответствующие импортному потенциалу этой страны. Сообщения должны быть на русском языке. Предоставьте ответ в анализируемом формате JSON с такой структурой: {"leads": [{"country": "Country Name (English)", "country_code": "двухбуквенный код страны", "company": "Название компании-покупателя", "message": "Сообщение запроса (Русский)"}, ...]}`,
+            },
+            zh: {
+                slogan: "全球贸易中心",
+                intro: "Netetrade.com 是一个国际工业贸易和商业网络平台。它为希望在全球市场上发挥影响力的制造和出口公司提供<span class=\"font-bold\" style=\"color: var(--text-accent);\">数字化转型解决方案</span>。",
+                featuresTitle: "主要<span style=\"color: var(--text-accent);\">功能</span>",
+                liveMeetings: "实时会议",
+                qrCard: "二维码名片",
+                catalogs: "产品目录和演示",
+                quotes: "请求/提交报价",
+                aiTitle: "🎯 发现您的潜在客户",
+                aiSubtitle: "实时观看人工智能如何为您寻找新市场。",
+                aiPromptTitle: "Netetrade 如何将您推向世界？",
+                placeholder: "输入您的公司名称...",
+                generateButton: "分析机会",
+                campaignTitle: "为土耳其制造商提供的特别优惠",
+                campaignGift: "50英寸 4K QLED 谷歌电视",
+                gift: "赠品！",
+                whyTitle: "为什么选择 <span style=\"color: var(--text-accent);\">Netetrade？</span>",
+                why1: "国家覆盖范围",
+                why2: "每日访客",
+                why3_title: "一个平台",
+                why3: "数字化与全球覆盖",
+                footerText: "加入这个强大的网络，跨越国界，将您的业务推向全球水平！",
+                ctaButton: "立即申请",
+                scanningText: "正在扫描潜在市场和买家...",
+                notifications: [
+                    "一位来自巴西的买家刚刚索取了机器零件的报价。", "一家德国公司创建了新的纺织品需求。", "一家印度公司联系了土耳其大理石生产商。", "一家卡塔尔的建筑公司正在收集建筑材料的投标。"
+                ],
+                geminiPrompt: (product) => `对于 B2B 电子商务平台 Netetrade.com，为名为“${product}”的公司生成 3 个模拟的国际客户请求（潜在客户）。每个请求必须来自不同的国家/地区，并包含一个真实的公司名称。请求应包含适合该国家/地区进口潜力的特定产品数量或合作建议。消息必须是中文。以可解析的 JSON 格式提供答案，结构如下：{"leads": [{"country": "Country Name (English)", "country_code": "两位国家/地区代码", "company": "买方公司名称", "message": "请求消息 (中文)"}, ...]}`,
+            }
         };
 
         const themeSwitcher = document.getElementById('theme-switcher');
@@ -338,6 +507,8 @@
         const svg = d3.select("#world-map");
         const projection = d3.geoMercator().scale(130).center([0, 40]).translate([480, 250]);
         const path = d3.geoPath().projection(projection);
+        
+        let notificationQueue = [];
 
         function drawMap(world) {
             svg.selectAll(".country").remove(); // Haritayı temizle
@@ -354,8 +525,8 @@
         
         function highlightCountries(countryCodes) {
             svg.selectAll(".country")
-                .style("fill", d => countryCodes.includes(d.properties.name) ? "var(--map-highlight)" : "var(--map-land)")
-                .classed("country-highlight", d => countryCodes.includes(d.properties.name));
+                .style("fill", d => countryCodes.map(c => c.toLowerCase()).includes(d.properties.name.toLowerCase()) ? "var(--map-highlight)" : "var(--map-land)")
+                .classed("country-highlight", d => countryCodes.map(c => c.toLowerCase()).includes(d.properties.name.toLowerCase()));
         }
 
         // Tema değiştirme fonksiyonu
@@ -496,7 +667,14 @@
         // Logo Bandı Fonksiyonu
         function setupLogoTicker() {
             // Netetrade.com'da yer alan gerçek firmalardan bazıları
-            const logos = ['pangolin-stone.com', 'safandarley.com', 'petekplastik.com.tr', 'fart-italia.com', 'gfs-filter.com', 'lampon.it', 'ozgorkey.com', 'martur.com.tr', 'hes.com.tr'];
+            const logos = [
+                'pangolin-stone.com', 'safandarley.com', 'petekplastik.com.tr', 'fart-italia.com', 
+                'gfs-filter.com', 'lampon.it', 'ozgorkey.com', 'martur.com.tr', 'hes.com.tr', 
+                'yartu.com', 'euroleads.fr', 'refritec.be', 'tokomeubel.com', 'cevagraf.coop',
+                'robinsonpolytunnels.co.uk', 'paperland.es', 'bevalex.by', 'groshi.online', 
+                'gkservice.gr', 'saccap.fr', 'agrotorimena.es', 'vignobles-boissonneau.com', 
+                'heine-brunnen.de', 'rovagro.com', 'dongkukrs.co.kr'
+            ];
             const ticker = document.getElementById('logo-ticker');
             const logoHtml = logos.map(logo => `<div class="ticker-item"><img src="https://logo.clearbit.com/${logo}" alt="${logo}" onerror="this.style.display='none'"></div>`).join('');
             ticker.innerHTML = logoHtml + logoHtml; // Sorunsuz döngü için kopyala
@@ -505,10 +683,14 @@
         // Canlı Bildirim Fonksiyonu
         function showNotification() {
             const container = document.getElementById('notification-container');
-            if (!translations[currentLanguage] || !translations[currentLanguage].notifications) return;
-            
-            const messages = translations[currentLanguage].notifications;
-            const message = messages[Math.floor(Math.random() * messages.length)];
+            if (notificationQueue.length === 0) {
+                // Kuyruk boşsa, çevrilmiş bildirimlerle yeniden doldur ve karıştır
+                const currentNotifications = translations[currentLanguage]?.notifications || [];
+                notificationQueue = [...currentNotifications].sort(() => 0.5 - Math.random());
+            }
+
+            const message = notificationQueue.pop(); // Kuyruktan bir bildirim al
+            if (!message) return;
 
             const notification = document.createElement('div');
             notification.className = 'notification-popup p-3 rounded-lg shadow-lg flex items-center space-x-3 max-w-xs';
@@ -545,7 +727,7 @@
             updateTexts();
             d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(drawMap);
             setupLogoTicker();
-            setInterval(showNotification, 8000); // 8 saniyede bir bildirim göster
+            setInterval(showNotification, 15000); // Bildirim sıklığı 15 saniyeye düşürüldü
         });
     </script>
 </body>
